@@ -4,10 +4,10 @@
 You have a web application that accepts requests from the internet. Clients can send requests to query for data. When a request comes in, the web application queries a MySQL database and returns the data to the client.
 
 Design a three-tier architecture that follows AWS best practices by using services such as 
-- Amazon Virtual Private Cloud (Amazon VPC), 
-- Amazon Elastic Compute Cloud (Amazon EC2),
-- Amazon Relational Database Service (Amazon RDS) with high availability,
-- and Elastic Load Balancing (ELB).
+- Amazon Virtual Private Cloud (Amazon VPC)
+- Amazon Elastic Compute Cloud (Amazon EC2)
+- Amazon Relational Database Service (Amazon RDS) with high availability
+- and Elastic Load Balancing (ELB)
 
 ## Initial analysis:
 From the requirements it can be seen that there is a need for a webserver system, a database (RDS) system and load balancing with ELB. There is no requirement given for direct remote access to the systems. The basic layout for the environment would then be:
@@ -22,9 +22,9 @@ There are to be three tiers in the environment; an internet/web tier, an applica
 To reduce security threats, the application tier and the database tier will hosted in private subnets.
 
 The layout is:<br>
-web tier - public subnet - elastic loadbalancer<br>
-application tier - private subnet - EC2 instances<br>
-database tier - private subnet - RDS(MySql), with a R/W primary mirrored to a R/O secondary
+| web tier | public subnet | elastic loadbalancer |
+| application tier | private subnet | EC2 instances |
+| database tier | private subnet | RDS(MySql), with a R/W primary mirrored to a R/O secondary |
 
 The proposed structure is shown below:
 ![3 tier AWS structure](3tier.jpg)
