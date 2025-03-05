@@ -22,6 +22,8 @@ There are to be three tiers in the environment; an internet/web tier, an applica
 To reduce security threats, the application tier and the database tier will hosted in private subnets.
 
 The layout is:<br>
+| Tier name | Subnet type | Tier objects|
+| --------- | --------- | ----------|
 | web tier | public subnet | elastic loadbalancer |
 | application tier | private subnet | EC2 instances |
 | database tier | private subnet | RDS(MySql), with a R/W primary mirrored to a R/O secondary |
