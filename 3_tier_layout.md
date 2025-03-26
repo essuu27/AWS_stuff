@@ -54,9 +54,8 @@ This layer hosts the EC2 servers that provide the public service. All EC2 server
 
 The routing table for this layer, RT-2, allows it to communicate with entities within the VPC and the wider internet. It should hold the following rules:
 ~~~ 
-<span style="background-color:DarkGray">
 10.0/16 local
-0.0.0.0/0 igw</span>
+0.0.0.0/0 igw
 ~~~ 
 ## Database layer
 The last layer is the 'database layer'. It is made up of two private subnets (10.0.8.0/24, 10.0.9.0/24) which reside in the seperate availability zones. This layer holds an RDS instance with a 'primary' server hosted in one availability zone and a 'backup' server hosted in the other. The database instances are part of a security group (db-sec-grp) that allows access from the application security group (app-sec-grp) but denies all other access. The database servers can connect to each other within the security group.
@@ -67,7 +66,7 @@ The backup server is also available for read operation requests from the applica
 
 To restrict network traffic directly to/from the internet route table RT-3 should be configured to only interact with the local network. It hold have only one entry, which is:
 ~~~ 
-<span style="background-color:DarkGray">10.0/16 local</span> 
+10.0/16 local
 ~~~ 
 
 This rules only recognises network packets with source or destination addresses in the 10.0.0/24 subnet and enables connections through the 'local' route. Any packets with source or destination addresses outside the 10.0/16 subnet will be dropped.
