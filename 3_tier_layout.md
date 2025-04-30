@@ -17,7 +17,7 @@ internet <=> load balancer <=> webservers <=> databases
 There is no stated security level for this service so I will make it as secure as possible. The database is to have no direct exposure to the internet and the webserver systems should have adequate network protection.
 
 ## Solution:
-There are to be three tiers to the environment, an internet/web tier, an application tier and a database tier. As the service is to be internet-accessible the web tier will be hosted in a public subnet.
+There are three tiers to the environment, an internet/web tier, an application tier and a database tier. As the service is internet-accessible the web tier will be hosted in a public subnet.
 
 To reduce security threats, the application tier and the database tier will hosted in private subnets.
 
@@ -30,7 +30,7 @@ The proposed structure is shown below:
 [3 tier AWS structure](3tier.jpg)
 
 ### Network layout:
-A new VPC is to be created with an address space of 10.0.0.0/16. This provides ample address space to provide distinct subnets as well as the ability for easy future expansion of the service if required.
+A new VPC is created with an address space of 10.0.0.0/16. This provides ample address space to provide distinct subnets as well as the ability for easy future expansion of the service if required.
 
 For this inital setup, the VPC will span two availability zones (AZ-1, AZ-2). There will be five defined subnets, one public and four private.
 
