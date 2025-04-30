@@ -14,7 +14,7 @@ From the requirements it can be seen that there is a need for a webserver system
 
 internet <=> load balancer <=> webservers <=> databases
 
-There is no stated security level for this service so I will attempt to make it as secure as possible. The database is to have no direct exposure to the internet and the webserver systems should have adequate network protection.
+There is no stated security level for this service so I will make it as secure as possible. The database is to have no direct exposure to the internet and the webserver systems should have adequate network protection.
 
 ## Solution:
 There are to be three tiers to the environment, an internet/web tier, an application tier and a database tier. As the service is to be internet-accessible the web tier will be hosted in a public subnet.
