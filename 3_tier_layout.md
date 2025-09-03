@@ -50,7 +50,7 @@ The ALB has an attached security group, net-sec-grp, which contains rules as to 
 ### Application layer
 The next layer is the 'application layer'. It is made up of two private subnets (10.0.4.0/24, 10.0.5.0/24) which are each hosted in separate AZs (AZ-1, AZ-2). Each subnet hosts an EC2 instance that provides a webserver. The EC2 instances are part of the target group (app-trg-grp).
 
-This layer hosts the EC2 servers that provide the public service. All EC2 servers are members of a security group (app-sec-grp). This security group has rules to allow only connections for ports 80, 443 and 2206 from the network layer security group (net-sec-grp) and deny all other connections. This reduces the risk of unauthorised, unplanned access to the web and data servies provided.
+This layer hosts the EC2 servers that provide the public service. All EC2 servers are members of a security group (app-sec-grp). This security group has rules to allow only connections for ports 80, 443 and 3306 from the network layer security group (net-sec-grp) and deny all other connections. This reduces the risk of unauthorised, unplanned access to the web and data servies provided.
 
 The routing table for this layer, RT-2, allows it to communicate with entities within the VPC and the wider internet. It should hold the following rules:
 ~~~ 
