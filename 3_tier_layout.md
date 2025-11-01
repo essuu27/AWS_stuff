@@ -14,23 +14,23 @@ From the requirements it can be seen that there is a need for a webserver system
 
 internet <=> load balancer <=> webservers <=> databases
 
-There is no stated security level for this service so I will attempt to make it as secure as possible. The database is to have no direct exposure to the internet and the webserver systems should have adequate network protection.
+There is no stated security level for this service so I will make it as secure as possible. The database is to have no direct exposure to the internet and the webserver systems should have adequate network protection.
 
 ## Solution:
-There are to be three tiers to the environment, an internet/web tier, an application tier and a database tier. As the service is to be internet-accessible the web tier will be hosted in a public subnet.
+There are three tiers to the environment, an internet/web tier, an application tier and a database tier. As the service is internet-accessible the web tier will be hosted in a public subnet.
 
 To reduce security threats, the application tier and the database tier will hosted in private subnets.
 
 The layout is:
-web tier - public subnet - elastic loadbalancer
-application tier - private subnet - EC2 instances
-database tier - private subnet - RDS(MySql), with a R/W primary mirrored to a R/O secondary
+- web tier - public subnet - elastic loadbalancer
+- application tier - private subnet - EC2 instances
+- database tier - private subnet - RDS(MySql), with a R/W primary mirrored to a R/O secondary
 
 The proposed structure is shown below:
 [3 tier AWS structure](3tier.jpg)
 
 ### Network layout:
-A new VPC is to be created with an address space of 10.0.0.0/16. This provides ample address space to provide distinct subnets as well as the ability for easy future expansion of the service if required.
+A new VPC is created with an address space of 10.0.0.0/16. This provides ample address space to provide distinct subnets as well as the ability for easy future expansion of the service if required.
 
 For this inital setup, the VPC will span two availability zones (AZ-1, AZ-2). There will be five defined subnets, one public and four private.
 
@@ -50,7 +50,7 @@ The ALB has an attached security group, net-sec-grp, which contains rules as to 
 ### Application layer
 The next layer is the 'application layer'. It is made up of two private subnets (10.0.4.0/24, 10.0.5.0/24) which are each hosted in separate AZs (AZ-1, AZ-2). Each subnet hosts an EC2 instance that provides a webserver. The EC2 instances are part of the target group (app-trg-grp).
 
-This layer hosts the EC2 servers that provide the public service. All EC2 servers are members of a security group (app-sec-grp). This security group has rules to allow only connections for ports 80, 443 and 2206 from the network layer security group (net-sec-grp) and deny all other connections. This reduces the risk of unauthorised, unplanned access to the web and data servies provided.
+This layer hosts the EC2 servers that provide the public service. All EC2 servers are members of a security group (app-sec-grp). This security group has rules to allow only connections for ports 80, 443 and 3306 from the network layer security group (net-sec-grp) and deny all other connections. This reduces the risk of unauthorised, unplanned access to the web and data servies provided.
 
 The routing table for this layer, RT-2, allows it to communicate with entities within the VPC and the wider internet. It should hold the following rules:
 ~~~ 
