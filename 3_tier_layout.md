@@ -16,6 +16,10 @@ internet <=> load balancer <=> webservers <=> databases
 
 There is no stated security level for this service so I will make it as secure as possible. The database is to have no direct exposure to the internet and the webserver systems should have adequate network protection.
 
+**[Note]** Most solutions I have seen to this project use a NAT gateway to link the public and private subnets. While a NAT gateway will allow transactions between the publi and private subnets it can be a bit of an "all or nothing" blunt tool. **Also, AWS charge for using a NAT gateway.** 
+
+I think a better way to achieve the interconnection between public and private subnets for this project is to use **security groups**. They offer a finer degree of control and are cost-free.
+
 ## Solution:
 There are three tiers to the environment, an internet/web tier, an application tier and a database tier. As the service is internet-accessible the web tier will be hosted in a public subnet.
 
