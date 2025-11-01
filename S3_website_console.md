@@ -1,4 +1,4 @@
-# Hosting a static website on AWS S3 - Step by step
+# How to host a static website on AWS S3 - Step by step
 
 ## Step 1: Access and general setup
 - login to your account at https://console.aws.amazon.com/
