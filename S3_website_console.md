@@ -125,16 +125,16 @@ To delete the storage bucket, and its contents follow these steps:
 
 **Warning** If you empty the storage bucket then all files and folders will be deleted forever. There is no way to recover these items. Make sure you have copies of anything that you want to keep.
 
--- the 'Empty bucket' page opens. To confirm that you want to empty this storage bucket you need to type '**permanently delete**' into the text box at the bottom of the screen.
+- the 'Empty bucket' page opens. To confirm that you want to empty this storage bucket you need to type '**permanently delete**' into the text box at the bottom of the screen.
 <img src="img/13-empty_bucket2.jpg" height="100">
 
--- then, when you are ready, click on the '**Empty**' button in the bottom right hand corner
+- then, when you are ready, click on the '**Empty**' button in the bottom right hand corner
 
--- the page refreshes. It should show a 'Successfully emptied bucket <bucket-name>' message. It will show you how many objects were deleted.
+- the page refreshes. It should show a 'Successfully emptied bucket <bucket-name>' message. It will show you how many objects were deleted.
 
--- it also shows whether it failed to delete any of the files. If you do see any deletion failures make sure you do not have any files from your website open in any browser windows. Then try again.
+- it also shows whether it failed to delete any of the files. If you do see any deletion failures make sure you do not have any files from your website open in any browser windows. Then try again.
 
--- after you've finished emptying the storage bucket, click on the '**Exit**' button in the top right corner.
+- after you've finished emptying the storage bucket, click on the '**Exit**' button in the top right corner.
 
 - back on the '**General purpose buckets**' page, select the storage bucket you want to delete
 - click the '**Delete**' button in the top toolbar
