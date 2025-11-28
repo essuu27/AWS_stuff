@@ -3,11 +3,11 @@
 ## Step 1: Access and general setup
 - login to your account at https://console.aws.amazon.com/
 
-- select region that you want to host the bucket by clicking the region selector in the top righthand corner. Select the region to best fits your needs.  
+- select region that you want to host the bucket by clicking the region selector in the top righthand corner. Select the region that best fits your needs.  
 <img src="img/01-select_region.jpg" height="100">
 
 ## Step 2: Create a bucket
-- navivate to the S3 main page. A link to it may be in the 'Recently visited' list, or you can search for S3 in the search box at the top of page. Or, you can goto https://console.aws.amazon.com/s3/
+- navigate to the S3 main page. A link to it may be in the 'Recently visited' list, or you can search for S3 in the search box at the top of page. Or, you can goto https://console.aws.amazon.com/s3/
 
 - click on '**General purpose buckets**' in the top bar and then click the 'Create bucket' button
 <img src="img/02-bucket_menu.jpg" height="100">
