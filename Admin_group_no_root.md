@@ -18,6 +18,10 @@ If you do not have such a policy then use the following procedure.
 ---
 
 - click on the '**JSON**' tab
+
+The screen should change to show the following:
+<img src="img/policy_editor.jpg">
+
 - delete all the text shown in the '**Policy editor**' window
 - paste in the following policy:
 ```json
@@ -78,7 +82,6 @@ This policy makes it so that if the user does not use MFA to login then they hav
 If the user has logged in successfully with MFA, then they will be granted all the permissions in their user profile.
 - after you have entered the text, click '**next**'
 
-<img src="img/policy_editor.jpg">
 ---
 
 - give this policy a name ('*AllowOnlyMFA*' is this example)
