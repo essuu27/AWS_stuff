@@ -43,7 +43,7 @@ The VPC is notionally subdivided into a 'networking layer', an 'application laye
 ### Network layer
 The 'networking' layer is public-accessible through the internet gateway, tagged 'igw'.
 
-An application load balancer (ALB) with integrated web application firewall is hosted in this layer. The ALB will pass traffic between the internet gateway (igw) and a target group (app-trg-grp). The ALB provides loadbalancing as well as protection against DDOS attacks. The integrated web application firewall protects against known layer-7 exploits.
+An application load balancer (ALB) with integrated web application firewall (WAF) is hosted in this layer. The ALB will pass traffic between the internet gateway (igw) and a target group (app-trg-grp). The ALB provides loadbalancing as well as protection against DDOS attacks. The integrated web application firewall protects against known layer-7 exploits.
 
 This layer uses the Route53 DNS service to track the IP addresses of the ALB instances across the availability zones. It will also publish the public IP address for accessing this setup. 
 
