@@ -61,7 +61,7 @@ The routing table for this layer, RT-2, allows it to communicate with entities w
 10.0/16 local
 0.0.0.0/0 igw
 ~~~ 
-## Database layer
+### Database layer
 The last layer is the 'database layer'. It is made up of two private subnets (10.0.8.0/24, 10.0.9.0/24) which reside in the seperate availability zones. This layer holds an RDS instance with a 'primary' server hosted in one availability zone and a 'backup' server hosted in the other. The database instances are part of a security group (db-sec-grp) that allows access from the application security group (app-sec-grp) but denies all other access. The database servers can connect to each other within the security group.
 
 The 'primary' database instance is run in read/write mode so that all transactions can be recorded and queried. The 'backup' server only takes write operations from the primary. This should reduce the risk of any externally triggered corruption of the primary database being propagated to the backup database. This also makes the backup server a "hot backup", able to be rapidly promoted to replace the primary database if needed.
