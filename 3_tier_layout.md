@@ -31,7 +31,7 @@ The layout is:
 - database tier - private subnet - RDS(MySql), with a R/W primary mirrored to a R/O secondary
 
 The proposed structure is shown below:
-[3 tier AWS structure](3tier.jpg)
+![3 tier AWS structure](3tier.jpg)
 
 ### Network layout:
 A new VPC is created with an address space of 10.0.0.0/16. This provides ample address space to provide distinct subnets as well as the ability for easy future expansion of the service if required.
